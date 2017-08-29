@@ -1,0 +1,12 @@
+module.exports = {
+  "type": "service_account",
+  "project_id": "nightlife-coordination-3dd0e",
+  "private_key_id": "5984895476ae38eca858003600c15efabf78c824",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDodaDlGiE/v2v4\n1QZXYfEBgnwn+u7eW8Ay/OLiGkEO3qISScABSQsKgUNOakZsOb3jKVATY4Yp0xlS\npBX4EHR/fhDdMUqkoCTq8tJu5R2kUmafN4M6H+1LDQ8Deb51FmUtFWV0yyEVLUdC\n7IgiSExPyR1tNX75JeTjCRCkN2dSakD8CCgL6/fv+CqxkO2KJ9oCAdIreuOvErY0\nQUGLtWcYAs7KRFCcIpbT79DvvzXtS79j67B9fBEbATNkn9q3xzKfg+jBY0NNt+tT\nB1ykSaOZ0GL5UCj09lmzzlXHfGa5Bgx3WhjHArqxY2jQT8dbbDh59SYCl0geb8yO\nF50Z95xNAgMBAAECggEAE0MjWYtPAS006U9eTBGJADmbsqS+iZfmPFi2rzWC5GnK\nhG6ZNbIOXhOPLCQDy7Yu19rlmwRb9W1xPicWd/IFyUZnvNXNDDOwo3RgFMGGXDEE\ny8GJ7aAq0FWCbo9hGsAykugLOmtA8EmKdmSgX4uIoUg2be/TzURDLBSlTPTsqkg3\nFXsl7pMhBGcEy8aKDGIPdwuR75tmbye7fHUVzLCQwnFJTlmJIrr6RZBF14qTWAzf\neVrysTbeFZWDDFrCHWsao+vrDePLZpQoZDPU18MlzdNiQgT+i/cK5iOr3fE9Mnw/\nszR2OYCeEB9MoP4/S/5wLhUU0/BPDtCCxwPRXn7V6QKBgQD8kXn0paJ+YbSp5CuF\n3nnSzYxLzMBxmWjSyedpZ+MVyJdf8Gw2+GR2Yg92moqYu2HHaaFNI9cky1NSfcaF\nVbxExs4Pw5m3JCrkspb+q7DOAkEEufOTlBCk7eZL3ORySfSw0gWrn0fEov7cBXXU\nvjwGrPiRAgLkXhttHMqROblRpQKBgQDrnjTdrQy96Wp1kq2/DpJEAtaUffVtm4ve\ncupVUvbjojxA3OxwITegjQj3AUOcL/OJekbNnN0YsjzJTW+GPFb0ulJX2vQnFmGx\nhnM7jt6NSajT8SrY5LOeNTKcVEUBMcSl2dgt6P9u98yizxOGH+rOsuTV2c/ehtGm\n6wRYeeVPiQKBgQCRjCgyou0EVbvuF645JB8iKw/JcsIH9PciWfYAmTyVBhat0/gY\nqYYDbrkoiSCLqZhMeYPZ12iZLI7kv9SSa/jlzYdcMEU59B6/0mcPddOatFPRrHNA\nvZfl467OUwpXDmVzLGTWJSEPoTqrgn4HzmT7F9zae8U84zp845WcoR45fQKBgCX2\nLHBW1Em41MUyp7mzoE9C4c206ZkKSaPCggzTPCH63phYv+NlBrBgaMRbOMhuVV+e\nCtBP6LN07CRGzKQlDqGJb4DmLxYpHf5bOi+rWiILbx8OqSee2W2xBoF3dlK18QgD\nrDfhZV48oITOtkeS1uMMoZ/u4vXoZNju3pleslp5AoGBAJhsAQ0ebxi8Inbf4d5Z\nGEsMl0VhwzfDt9quAgTyxYw12AE2Qcw7nHldwIIyXxbs7ixlwjyYgVsNIaxPSk3y\nK9JUja6H2x/T1KJQsZCZh7Ezp5AyQi0oEUwjjn9xHLrcV+ugC4hRaGVKHt46luJ6\nRJsO1qYMqAD396Ngv2rk8MsD\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-wyu4n@nightlife-coordination-3dd0e.iam.gserviceaccount.com",
+  "client_id": "111863703366092253159",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-wyu4n%40nightlife-coordination-3dd0e.iam.gserviceaccount.com"
+}
