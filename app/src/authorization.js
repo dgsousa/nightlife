@@ -14,8 +14,6 @@ export const getCredentials = async (store, config, socket) => {
 		const result = await firebase.auth().getRedirectResult();
 		const user = result.user && result.user.displayName || null;
 		socket.emit("signIn", user);
-		sessionStorage.setItem("user", user);
-		console.log(user);
 
 	} catch(err) {
 		console.log("error", err.message);

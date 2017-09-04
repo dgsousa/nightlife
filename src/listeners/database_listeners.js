@@ -1,14 +1,15 @@
 
 
 
-const setDestinationDatabaseListener = (socket, database) =>
+const updateMemberDatabaseListener = (socket, database) =>
 	["child_added", "child_changed"].forEach(event => {
 		database.ref("/members").on(event, snap => {
-			const user = snap.key;
-			const destination = snap.val();
+			const key = snap.key;
+			const {username, destination = null} = snap.val();
 			socket.emit("data", {
-				type: "SET_DESTINATION",
-				user,
+				type: "UPDATE_MEMBER",
+				key,
+				username,
 				destination
 			})
 		})
@@ -16,6 +17,7 @@ const setDestinationDatabaseListener = (socket, database) =>
 
 
 
+
 module.exports = {
-	setDestinationDatabaseListener
+	updateMemberDatabaseListener
 }

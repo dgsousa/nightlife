@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-import ReactDOM from "react-dom";
 import {connect} from "react-redux";
 import axios from "axios";
+
+
 import {getResults} from "../actions/actionCreators";
 import {redirectToLogin, signOut} from "../src/authorization";
 
@@ -51,7 +52,6 @@ class SearchBox extends Component {
 					</div>
 					<button onClick={this.getSearchResults}>Submit</button>
 				</form>
-				<button onClick={redirectToLogin}>Login</button>
 			</div>
 		)
 	}

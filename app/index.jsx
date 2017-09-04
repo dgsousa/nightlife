@@ -13,13 +13,9 @@ const socket = io();
 
 const store = createStoreWithMiddlewareAndSocket(socket);
 
-
-socket.on("config", config => {
-	getCredentials(store, config, socket);
-	socket.on("data", store.dispatch);
-})
-
-
+socket.on("data", data => {
+	store.dispatch(data);
+});
 
 
 ReactDOM.render(

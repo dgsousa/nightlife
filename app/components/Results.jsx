@@ -1,7 +1,8 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import {connect} from "react-redux";
-import {setDestination} from "../actions/actionCreators";
 
+import {setDestination} from "../actions/actionCreators";
 import Attendees from "./Attendees.jsx";
 
 const Results = ({results, setDestination}) =>
@@ -10,9 +11,10 @@ const Results = ({results, setDestination}) =>
 		<ul>
 			{results.map((result, index) => 
 				<li key={index}>
-					<div>
-						<Attendees result={result}/>
-						<button value={result.name} onClick={setDestination}>{result.name}</button>
+					<div className="result">
+						<Link to={`/places/${result.id}`}>{result.name}</Link>
+						<Attendees result={result} />
+						<button value={result.name} onClick={setDestination}>+</button>
 					</div>
 				</li>
 			)}

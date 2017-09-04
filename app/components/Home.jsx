@@ -1,15 +1,16 @@
-import React, {Component} from "react";
-import ReactDOM from "react-dom";
+import React from "react";
+
+
 import SearchBox from "./SearchBox.jsx";
 import Results from "./Results.jsx";
 
 
-const SearchPage = () =>
+const Home = () =>
 	<div>
 		<SearchBox />
 		<Results />
 	</div>
 
+export default Home;
 
-export default SearchPage;
 	

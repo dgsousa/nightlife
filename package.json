@@ -16,6 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.16.2",
+    "babel-polyfill": "^6.26.0",
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.17.2",
     "ejs": "^2.5.7",
     "express": "^4.15.4",

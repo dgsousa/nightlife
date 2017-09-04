@@ -1,17 +1,15 @@
-import React, {Component} from "react";
-import ReactDOM from "react-dom";
-import {BrowserRouter as Router, Switch} from "react-router-dom";
-import SearchPage from "./SearchPage.jsx";
+import React from "react";
+import {BrowserRouter as Router} from "react-router-dom";
 
+import Routes from "./Routes.jsx";
 
 
 const App = () =>
-	<div>
-		<Router>
-			<Switch>
-				<SearchPage exact path="/"/>
-			</Switch>
-		</Router>
-	</div>
+	<Router>
+		<Routes/>
+	</Router>
 
 export default App;
+
+
+

@@ -7,7 +7,8 @@
 		<title>Nighlife Coordination App</title>
 	</head>
 	<body>
-		<div id="app"></div>
-		<script src="static/app.bundle.js"></script>
+		<div id="app"><%- reactComponent -%></div>
+		<script>window.INITIAL_STATE=<%- initialState -%></script>
+		<!--script src="/static/app.bundle.js"></script-->
 	</body>
 </html>
