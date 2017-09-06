@@ -66273,7 +66273,7 @@ Backoff.prototype.setJitter = function (jitter) {
 
 const initialState = window.INITIAL_STATE;
 
-const createStoreWithMiddlewareAndSocket = socket => Object(__WEBPACK_IMPORTED_MODULE_0_redux__["e" /* createStore */])(__WEBPACK_IMPORTED_MODULE_2__reducers_appReducer_js__["a" /* default */], initialstate, Object(__WEBPACK_IMPORTED_MODULE_0_redux__["d" /* compose */])(Object(__WEBPACK_IMPORTED_MODULE_0_redux__["a" /* applyMiddleware */])(__WEBPACK_IMPORTED_MODULE_1_redux_thunk___default.a.withExtraArgument(socket)), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
+const createStoreWithMiddlewareAndSocket = socket => Object(__WEBPACK_IMPORTED_MODULE_0_redux__["e" /* createStore */])(__WEBPACK_IMPORTED_MODULE_2__reducers_appReducer_js__["a" /* default */], initialState, Object(__WEBPACK_IMPORTED_MODULE_0_redux__["d" /* compose */])(Object(__WEBPACK_IMPORTED_MODULE_0_redux__["a" /* applyMiddleware */])(__WEBPACK_IMPORTED_MODULE_1_redux_thunk___default.a.withExtraArgument(socket)), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
 
 /* harmony default export */ __webpack_exports__["a"] = (createStoreWithMiddlewareAndSocket);
 

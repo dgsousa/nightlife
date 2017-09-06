@@ -28,7 +28,7 @@ const handleRender = (file, database) => async (req, res) => {
 	const store = createStore(appReducer);
 	const snap = await database.ref("/members/").once("value");
 	const initialState = setupInitialState(snap, store);
-
+	
 	const reactComponent = renderToString(
 		<Provider store={store}>
 			<Router

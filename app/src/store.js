@@ -7,7 +7,7 @@ const initialState = window.INITIAL_STATE;
 const createStoreWithMiddlewareAndSocket = (socket) =>
 	createStore(
 		appReducer,
-		initialstate,
+		initialState,
 		compose(
 			applyMiddleware(thunk.withExtraArgument(socket)), 
 			window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
