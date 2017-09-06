@@ -22,7 +22,7 @@ const Results = ({results, setDestination}) =>
 	</div>
 		
 const mapStateToProps = (state) => ({
-	results: state.results
+	results: state.get("results")
 })
 
 

@@ -1,71 +1,40 @@
-import { combineReducers } from "redux";
+//import { combineReducers } from "redux";
+import {Map} from "immutable";
 
 
-const usernameReducer = (state = null, action) => {
-	switch(action.type) {
-	case "SIGN_UP":
-	case "LOGIN":
-		return action.username
-	case "LOGOUT":
-		return null
-	}
-	return state;
+function login(state, action) {
+	return state.set("username", action.username = null)
+				.set("key", action.key = null);
 }
 
-const keyReducer = (state = null, action) => {
-	switch(action.type) {
-	case "SIGN_UP":
-	case "LOGIN":
-		return action.key
-	case "LOGOUT":
-		return null
-	}
-	return state;
+function error(state, action) {
+	return state.set("message", action.message = null);
+}
+
+function getResults(state, action) {
+	return state.set("results", action.results);
+}
+
+function updateMember(state, action) {
+	return state.updateIn(["members", action.key, "username"], 0, username => action.username)
+				.updateIn(["members", action.key, "destination"], 0, destination => action.destination);
+	
 }
 
 
-const resultsReducer = (state = [], action) => {
+export default (state = Map(), action) => {
 	switch(action.type) {
+	case "LOGIN":
+		return login(state, action);
 	case "GET_RESULTS":
-		return action.results;
-	}
-	return state;
-}
-
-
-const membersReducer = (state = {}, action) => {
-	switch(action.type) {
-	case "UPDATE_MEMBER": 
-		return {
-			...state,
-			[action.key]: {
-				username: action.username,
-				destination: action.destination
-			}
-		}
-	}
-	return state;
-}
-
-const messageReducer = (state = null, action) => {
-	switch(action.type) {
+		return getResults(state, action);
+	case "UPDATE_MEMBER":
+		return updateMember(state, action);
 	case "ERROR":
-		return action.message
+		return error(state, action);
 	}
 	return state;
 }
 
 
 
-const appReducer = combineReducers({
-	username: usernameReducer,
-	key: keyReducer,
-	members: membersReducer,
-	results: resultsReducer,
-	message: messageReducer
-});
-
-
-
-
-export default appReducer;

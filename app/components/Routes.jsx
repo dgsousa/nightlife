@@ -13,7 +13,7 @@ import {login, createAccount} from "../actions/actionCreators";
 const Routes = ({username, login, createAccount}) => 
 
 	<div>
-		<Route component={Header}/>
+		{username && <Route component={Header}/>}
 		<Switch>
 			<Route path={"/places/:id"} component={Place}/>
 			{username || <Route path={"/signup"} render={() => <Form submitForm={createAccount}/>}/>}
@@ -22,7 +22,7 @@ const Routes = ({username, login, createAccount}) =>
 	</div>
 
 
-const mapStateToProps = (state) => ({username: state.username})
+const mapStateToProps = (state) => ({username: state.get("username")})
 
 export default withRouter(connect(
 	mapStateToProps,

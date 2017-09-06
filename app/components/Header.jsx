@@ -4,17 +4,15 @@ import {Link} from "react-router-dom";
 
 import {logout} from "../actions/actionCreators.js";
 
-const Header = ({username, logout}) => username &&
+const Header = ({logout}) =>
 	<div className="header">
 		<Link to={"/"}>Home</Link>
 		<button onClick={logout}>Logout</button>
 	</div>
 
-const mapStateToProps = (state) => ({
-	username: state.username
-})
+
 
 export default connect(
-	mapStateToProps,
+	null,
 	{logout}
 )(Header);

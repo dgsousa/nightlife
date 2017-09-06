@@ -9,7 +9,7 @@ const Attendees = ({attendees}) => {
 
 
 const mapStateToProps = (state, ownProps) => ({
-	attendees: Object.keys(state.members).filter(member => members[member].destination === ownProps.result.name)
+	attendees: Object.keys(state.get("members")).filter(member => members[member].destination === ownProps.result.name)
 })
 
 export default connect(

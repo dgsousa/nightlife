@@ -49,7 +49,7 @@ class Form extends Component{
 }
 
 const mapStateToProps = (state, ownProps) => ({
-	message: state.message,
+	message: state.get("message"),
 	submitForm: ownProps.submitForm,
 	url: ownProps.match.url
 })

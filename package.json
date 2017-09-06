@@ -24,6 +24,7 @@
     "express-session": "^1.15.5",
     "firebase": "^4.2.0",
     "firebase-admin": "^5.1.0",
+    "immutable": "^3.8.1",
     "mongodb": "^2.2.31",
     "mongoose": "^4.11.7",
     "react": "^15.6.1",

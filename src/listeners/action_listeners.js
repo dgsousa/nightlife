@@ -29,7 +29,7 @@ const signUpActionListener = (socket, database) => async data => {
 		password: hash
 	}).key
 	key && socket.emit("data", {
-		type: "SIGN_UP",
+		type: "LOGIN",
 		username,
 		key
 	})
