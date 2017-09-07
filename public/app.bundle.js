@@ -62985,16 +62985,14 @@ const mapStateToProps = state => ({
 
 
 
-const Attendees = ({ attendees }) => {
-	__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-		"span",
-		null,
-		`${attendees.length} people are going`
-	);
-};
+const Attendees = ({ attendees }) => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+	"span",
+	null,
+	`${attendees.length} people are going`
+);
 
 const mapStateToProps = (state, ownProps) => ({
-	attendees: Object.keys(state.members).filter(member => members[member].destination === ownProps.result.name)
+	attendees: Object.keys(state.members).filter(member => state.members[member].destination === ownProps.result.name)
 });
 
 /* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(mapStateToProps)(Attendees));
