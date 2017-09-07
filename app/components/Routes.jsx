@@ -22,7 +22,9 @@ const Routes = ({username, login, createAccount}) =>
 	</div>
 
 
-const mapStateToProps = (state) => ({username: state.get("username")})
+const mapStateToProps = (state) => ({
+	username: state.get("username") || null
+})
 
 export default withRouter(connect(
 	mapStateToProps,

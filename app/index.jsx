@@ -9,11 +9,13 @@ import firebase from "firebase";
 import createStoreWithMiddlewareAndSocket from "./src/store";
 
 
+
 const socket = io();
 
 const store = createStoreWithMiddlewareAndSocket(socket);
 
 socket.on("data", data => {
+	console.log(data);
 	store.dispatch(data);
 });
 

@@ -19,7 +19,8 @@ const setupInitialState = (snap, store) => {
 			destination
 		})
 	});
-	return JSON.stringify(store.getState());
+
+	return JSON.stringify(store.getState().toJSON());
 }
 
 
@@ -28,6 +29,7 @@ const handleRender = (file, database) => async (req, res) => {
 	const store = createStore(appReducer);
 	const snap = await database.ref("/members/").once("value");
 	const initialState = setupInitialState(snap, store);
+	
 
 	const reactComponent = renderToString(
 		<Provider store={store}>

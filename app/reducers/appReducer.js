@@ -2,9 +2,12 @@
 import {Map} from "immutable";
 
 
+
 function login(state, action) {
-	return state.set("username", action.username = null)
-				.set("key", action.key = null);
+	const newState = state.set("username", action.username)
+						.set("key", action.key);
+	console.log(newState);
+	return newState;
 }
 
 function error(state, action) {
