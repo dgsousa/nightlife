@@ -58,9 +58,7 @@ class SearchBox extends Component {
 }
 
 
-SearchBox = connect(
+export default connect(
 	null,
 	{getResults}
 )(SearchBox)
-
-export default SearchBox;

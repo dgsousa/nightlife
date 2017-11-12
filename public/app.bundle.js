@@ -35595,7 +35595,6 @@ const socket = __WEBPACK_IMPORTED_MODULE_5_socket_io_client___default()();
 const store = Object(__WEBPACK_IMPORTED_MODULE_8__src_store__["a" /* default */])(socket);
 
 socket.on("data", data => {
-	console.log(data);
 	store.dispatch(data);
 });
 
@@ -51328,7 +51327,7 @@ const Routes = ({ username, login, createAccount }) => __WEBPACK_IMPORTED_MODULE
 		__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* Switch */],
 		null,
 		__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: "/places/:id", component: __WEBPACK_IMPORTED_MODULE_5__Place_jsx__["a" /* default */] }),
-		username || __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: "/signup", render: () => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__Form_jsx__["a" /* default */], { submitForm: createAccount }) }),
+		!username && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: "/signup", render: () => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__Form_jsx__["a" /* default */], { submitForm: createAccount }) }),
 		username ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: "/", component: __WEBPACK_IMPORTED_MODULE_3__Home_jsx__["a" /* default */] }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Route */], { path: "/", render: () => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__Form_jsx__["a" /* default */], { submitForm: login }) })
 	)
 );
@@ -67799,16 +67798,14 @@ const mapStateToProps = state => ({
 
 
 
-const Attendees = ({ attendees }) => {
-	__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-		"span",
-		null,
-		`${attendees.length} people are going`
-	);
-};
+const Attendees = ({ attendees }) => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+	"span",
+	null,
+	`${attendees.length} people are going`
+);
 
-const mapStateToProps = (state, ownProps) => (console.log(state.toJS()), {
-	attendees: Object.keys(state.toJS()).members.filter(member => members[member].destination === ownProps.result.name)
+const mapStateToProps = (state, ownProps) => ({
+	attendees: Object.keys(state.toJS().members).filter(member => state.toJS().members[member].destination === ownProps.result.name)
 });
 
 /* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(mapStateToProps)(Attendees));
@@ -71100,27 +71097,21 @@ const createStoreWithMiddlewareAndSocket = socket => Object(__WEBPACK_IMPORTED_M
 //import { combineReducers } from "redux";
 
 
-function login(state, action) {
-	const newState = state.set("username", action.username).set("key", action.key);
-	console.log(newState);
-	return newState;
-}
+const login = (state, action) => {
+	return state.set("username", action.username || null).set("key", action.key || null);
+};
 
-function error(state, action) {
-	return state.set("message", action.message = null);
-}
+const error = (state, action) => state.set("message", action.message = null);
 
-function getResults(state, action) {
-	return state.set("results", action.results);
-}
+const getResults = (state, action) => state.set("results", action.results);
 
-function updateMember(state, action) {
-	return state.updateIn(["members", action.key, "username"], 0, username => action.username).updateIn(["members", action.key, "destination"], 0, destination => action.destination);
-}
+const updateMember = (state, action) => state.updateIn(["members", action.key, "username"], 0, username => action.username).updateIn(["members", action.key, "destination"], 0, destination => action.destination);
 
 /* harmony default export */ __webpack_exports__["a"] = ((state = Object(__WEBPACK_IMPORTED_MODULE_0_immutable__["Map"])(), action) => {
 	switch (action.type) {
 		case "LOGIN":
+			return login(state, action);
+		case "LOGOUT":
 			return login(state, action);
 		case "GET_RESULTS":
 			return getResults(state, action);

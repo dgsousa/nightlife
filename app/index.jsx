@@ -15,7 +15,6 @@ const socket = io();
 const store = createStoreWithMiddlewareAndSocket(socket);
 
 socket.on("data", data => {
-	console.log(data);
 	store.dispatch(data);
 });
 

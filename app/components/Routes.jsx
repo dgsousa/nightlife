@@ -16,7 +16,7 @@ const Routes = ({username, login, createAccount}) =>
 		{username && <Route component={Header}/>}
 		<Switch>
 			<Route path={"/places/:id"} component={Place}/>
-			{username || <Route path={"/signup"} render={() => <Form submitForm={createAccount}/>}/>}
+			{!username && <Route path={"/signup"} render={() => <Form submitForm={createAccount}/>}/>}
 			{username ?  <Route path={"/"} component={Home}/> : <Route path={"/"} render={() => <Form submitForm={login}/>}/>}
 		</Switch>
 	</div>

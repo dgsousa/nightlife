@@ -12,10 +12,7 @@ const searchEventListener = socket => async data => {
 	try {
 		let results = await client.search(data);
 		results = results.jsonBody.businesses;
-		socket.emit("data", {
-			type: "GET_RESULTS",
-			results
-		});
+		socket.emit("data", { type: "GET_RESULTS", results });
 	} catch(err) {
 		socket.emit("error", err);
 	}
@@ -24,15 +21,8 @@ const searchEventListener = socket => async data => {
 const signUpActionListener = (socket, database) => async data => {
 	const {username, password} = data;
 	const hash = await bcrypt.hash(password, 10);
-	const key = database.ref("/members/").push({
-		username,
-		password: hash
-	}).key
-	key && socket.emit("data", {
-		type: "LOGIN",
-		username,
-		key
-	})
+	const key = database.ref("/members/").push({ username, password: hash}).key
+	key && socket.emit("data", { type: "LOGIN", username, key });
 }
 
 const loginActionListener = (socket, database) => async data => {
@@ -52,3 +42,8 @@ module.exports = {
 	signUpActionListener,
 	loginActionListener
 };
+
+
+
+
+
